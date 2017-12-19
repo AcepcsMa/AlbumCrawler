@@ -27,7 +27,7 @@ class UnsplashSpider(scrapy.Spider):
         for each in dataJson:
             album = AlbumItem()
             album["albumTitle"] = each["title"]
-            album["albumDescription"] = each["title"]
+            album["albumDescription"] = each["title"] if each["description"] is None else each["description"]
             album["albumUrl"] = each["links"]["html"]
             album["avatarUrl"] = each["cover_photo"]["links"]["download"]
             album["albumPicCount"] = each["total_photos"]
@@ -39,7 +39,7 @@ class UnsplashSpider(scrapy.Spider):
             album["albumPubTime"] = re.sub("T", " ", each["published_at"])[:each["published_at"].rfind("-")]
             yield album
 
-        pageCount = int(re.findall("&page=([0-9]+?)", response.url)[0])
+        pageCount = int(re.findall("&page=([0-9]+)", response.url)[0])
         if pageCount < 10:
             url = re.sub("&page=[0-9]+?", "&page={}".format(pageCount+1), response.url)
             yield Request(url=url, headers=self.headers)
