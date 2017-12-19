@@ -29,7 +29,7 @@ class UnsplashSpider(scrapy.Spider):
             album["albumTitle"] = each["title"]
             album["albumDescription"] = each["title"] if each["description"] is None else each["description"]
             album["albumUrl"] = each["links"]["html"]
-            album["avatarUrl"] = each["cover_photo"]["links"]["download"]
+            album["avatarUrl"] = each["cover_photo"]["urls"]["small"]
             album["albumPicCount"] = each["total_photos"]
 
             contents = list()

@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2d86a425-50ff-4ef0-905f-f7f9e6fd918a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AlbumCrawler/debug.py" afterPath="$PROJECT_DIR$/AlbumCrawler/debug.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AlbumCrawler/spiders/Unsplash.py" afterPath="$PROJECT_DIR$/AlbumCrawler/spiders/Unsplash.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -15,11 +14,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Unsplash.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Unsplash.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/AlbumCrawler/spiders/Unsplash.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
-              <caret line="33" column="0" lean-forward="true" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+            <state relative-caret-position="340">
+              <caret line="31" column="69" lean-forward="true" selection-start-line="31" selection-start-column="69" selection-end-line="31" selection-end-column="69" />
               <folding>
                 <element signature="e#24#37#0" expanded="true" />
               </folding>
@@ -27,11 +26,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pipelines.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="pipelines.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/AlbumCrawler/pipelines.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="729">
-              <caret line="67" column="19" lean-forward="true" selection-start-line="67" selection-start-column="19" selection-end-line="67" selection-end-column="19" />
+            <state relative-caret-position="248">
+              <caret line="53" column="0" lean-forward="true" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
               <folding>
                 <element signature="e#193#225#0" expanded="true" />
               </folding>
@@ -70,8 +69,8 @@
         <option value="$PROJECT_DIR$/AlbumCrawler/spiders/Sina.py" />
         <option value="$PROJECT_DIR$/AlbumCrawler/spiders/Netease.py" />
         <option value="$PROJECT_DIR$/AlbumCrawler/debug.py" />
-        <option value="$PROJECT_DIR$/AlbumCrawler/spiders/Unsplash.py" />
         <option value="$PROJECT_DIR$/AlbumCrawler/pipelines.py" />
+        <option value="$PROJECT_DIR$/AlbumCrawler/spiders/Unsplash.py" />
       </list>
     </option>
   </component>
@@ -710,22 +709,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/AlbumCrawler/spiders/Unsplash.py">
+    <entry file="file://$PROJECT_DIR$/AlbumCrawler/pipelines.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="33" column="0" lean-forward="true" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+        <state relative-caret-position="248">
+          <caret line="53" column="0" lean-forward="true" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
           <folding>
-            <element signature="e#24#37#0" expanded="true" />
+            <element signature="e#193#225#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/AlbumCrawler/pipelines.py">
+    <entry file="file://$PROJECT_DIR$/AlbumCrawler/spiders/Unsplash.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="729">
-          <caret line="67" column="19" lean-forward="true" selection-start-line="67" selection-start-column="19" selection-end-line="67" selection-end-column="19" />
+        <state relative-caret-position="340">
+          <caret line="31" column="69" lean-forward="true" selection-start-line="31" selection-start-column="69" selection-end-line="31" selection-end-column="69" />
           <folding>
-            <element signature="e#193#225#0" expanded="true" />
+            <element signature="e#24#37#0" expanded="true" />
           </folding>
         </state>
       </provider>
