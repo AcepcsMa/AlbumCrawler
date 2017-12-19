@@ -53,18 +53,19 @@ class AlbumPipeline(object):
         self.urlRecord = set()
 
     def process_item(self, item, spider):
-        albumData = dict(item)
-        urlMD5 = Utils.md5(albumData["albumUrl"])
-        if urlMD5 not in self.urlRecord:
-            avatarMD5 = Utils.md5(albumData["avatarUrl"])
-            if Utils.fetchImage(albumData["avatarUrl"], self.qiniuAuth, self.qiniuBucket, avatarMD5):
-                albumData["avatarUrl"] = self.qiniuDomain + avatarMD5
-                self.saveToMySql(albumData)
-                self.esIndex(albumData)  # add to elastic-search
-                self.redisConnect.zadd("album_url", # add url to redis
-                                       albumData["albumUrl"],
-                                       int(time.time()))
-                self.urlRecord.add(urlMD5)
+        if self.redisConnect.zscore("album_url", item["albumUrl"]) is None:
+            albumData = dict(item)
+            urlMD5 = Utils.md5(albumData["albumUrl"])
+            if urlMD5 not in self.urlRecord:
+                avatarMD5 = Utils.md5(albumData["avatarUrl"])
+                if Utils.fetchImage(albumData["avatarUrl"], self.qiniuAuth, self.qiniuBucket, avatarMD5):
+                    albumData["avatarUrl"] = self.qiniuDomain + avatarMD5
+                    self.saveToMySql(albumData)
+                    self.esIndex(albumData)  # add to elastic-search
+                    self.redisConnect.zadd("album_url", # add url to redis
+                                           albumData["albumUrl"],
+                                           int(time.time()))
+                    self.urlRecord.add(urlMD5)
         return item
 
     def esIndex(self, item):

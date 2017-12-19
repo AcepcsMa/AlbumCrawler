@@ -70,3 +70,4 @@ class RemoveDuplicateMiddleware(object):
     def process_request(self, request, spider):
         if self.redisConnect.zscore("album_url", request.url) is not None:
             raise exceptions.IgnoreRequest
+
