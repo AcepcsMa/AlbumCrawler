@@ -14,8 +14,7 @@ class NeteaseSpider(scrapy.Spider):
     }
 
     def start_requests(self):
-        urls = ["http://pic.news.163.com/photocenter/api/list/0001/5MC30001/0/10/cacheMoreData.json"]
-        # urls = Utils.getStartUrlsFromDb(NeteaseSpider.name)
+        urls = Utils.getStartUrlsFromDb(NeteaseSpider.name)
         for url in urls:
             yield Request(url=url, headers=self.headers)
 
