@@ -32,7 +32,7 @@ class ToutiaoSpider(scrapy.Spider):
                 album["albumUrl"] = response.urljoin(each["source_url"])
                 album["avatarUrl"] = each["middle_image"]
                 album["albumPicCount"] = each["gallary_image_count"]
-                album["albumPubTime"] = time.strftime("%Y/%m/%d %H:%M:%S", time.localtime(each["behot_time"]))
+                album["albumPubTime"] = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(each["behot_time"]))
                 try:
                     album["albumContent"] = ",".join(each["label"])
                 except:

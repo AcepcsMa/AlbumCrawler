@@ -104,3 +104,4 @@ class AlbumPipeline(object):
 
     def __exit__(self, exc_type, exc_val, exc_tb):
         self.mysqlConnect.close()
+        self.redisPool.disconnect()
