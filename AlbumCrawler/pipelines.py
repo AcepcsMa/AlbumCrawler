@@ -85,7 +85,9 @@ class AlbumPipeline(object):
                 "input":(",".join(jieba.cut_for_search(item["albumTitle"]))).split(",")
             }
         }
-        self.esConnect.index(index="albums", doc_type="album", body=doc)
+        self.esConnect.index(index=settings["ELASTIC_INDEX"],
+                             doc_type=settings["ELASTIC_TYPE"],
+                             body=doc)
         self.esConnect.indices.refresh(index="albums")
 
     def saveToMySql(self, item):
