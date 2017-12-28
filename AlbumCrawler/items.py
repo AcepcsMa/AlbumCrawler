@@ -23,3 +23,4 @@ class AlbumItem(scrapy.Item):
     albumPicCount = scrapy.Field()
     albumContent = scrapy.Field()
     albumPubTime = scrapy.Field()
+    dataType = scrapy.Field()

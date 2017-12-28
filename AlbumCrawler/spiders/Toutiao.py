@@ -27,6 +27,7 @@ class ToutiaoSpider(scrapy.Spider):
             data = responseJson["data"]
             for each in data:
                 album = AlbumItem()
+                album["dataType"] = 0
                 album["albumTitle"] = each["title"]
                 album["albumDescription"] = each["title"]
                 album["albumUrl"] = response.urljoin(each["source_url"])

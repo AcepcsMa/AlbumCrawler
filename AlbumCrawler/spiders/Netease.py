@@ -25,6 +25,7 @@ class NeteaseSpider(scrapy.Spider):
 
         for each in dataJson:
             album = AlbumItem()
+            album["dataType"] = 0
             album["albumTitle"] = each["setname"]
             album["albumDescription"] = each["setname"]
             album["albumUrl"] = each["seturl"]

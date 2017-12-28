@@ -26,6 +26,7 @@ class UnsplashSpider(scrapy.Spider):
         dataJson = json.loads(response.body)["results"]
         for each in dataJson:
             album = AlbumItem()
+            album["dataType"] = 0
             album["albumTitle"] = each["title"]
             album["albumDescription"] = each["title"] if each["description"] is None else each["description"]
             album["albumUrl"] = each["links"]["html"]

@@ -61,7 +61,7 @@ class AlbumPipeline(object):
                 if Utils.fetchImage(albumData["avatarUrl"], self.qiniuAuth, self.qiniuBucket, avatarMD5):
                     albumData["avatarUrl"] = self.qiniuDomain + avatarMD5
                     self.saveToMySql(albumData)
-                    self.esIndex(albumData)  # add to elastic-search
+                    self.esIndex(albumData)  # add to elasticsearch
                     self.redisConnect.zadd("album_url", # add url to redis
                                            albumData["albumUrl"],
                                            int(time.time()))
@@ -81,6 +81,7 @@ class AlbumPipeline(object):
             "pub_time": item["albumPubTime"],
             "avatar_url": item["avatarUrl"],
             "url": item["albumUrl"],
+            "data_type": item["dataType"],
             "suggest": {
                 "input":(",".join(jieba.cut_for_search(item["albumTitle"]))).split(",")
             }
@@ -101,7 +102,7 @@ class AlbumPipeline(object):
                         [item["albumTitle"], item["albumPicCount"],
                          item["albumDescription"], item["avatarUrl"],
                          item["albumUrl"], item["albumContent"],
-                         item["albumPubTime"]])
+                         item["albumPubTime"], item["dataType"]])
         cursor.close()
 
     def __exit__(self, exc_type, exc_val, exc_tb):

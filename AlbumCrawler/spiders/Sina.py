@@ -22,6 +22,7 @@ class SinaSpider(scrapy.Spider):
         albumData = json.loads(response.body)["data"]
         for each in albumData:
             album = items.AlbumItem()
+            album["dataType"] = 0
             album["albumTitle"] = each["name"]
             album["albumDescription"] = each["short_intro"]
             album["albumUrl"] = each["url"]
