@@ -1,4 +1,4 @@
 from scrapy import cmdline
 
-command = "scrapy crawl Toutiao"
+command = "scrapy crawl Pexels"
 cmdline.execute(command.split())
